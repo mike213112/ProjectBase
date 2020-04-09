@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projectbases-671fe": {
+      "hosting": {
+        "ProjectBases": [
+          "projectbases-671fe"
+        ]
+      }
+    }
+  }
+}
