@@ -34,7 +34,47 @@
     </ul>
 
 </nav>
-
-<div *ngIf="!isLogged">
-    <img src="../../../assets/imagenes/fondo.jpg">
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h1 class="color">Invetario</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let listar of listarProductos">
+                        <td>
+                            {{listar.codigo}}
+                        </td>
+                        <td>
+                            {{listar.nombre}}
+                        </td>
+                        <td>
+                            {{listar.precio}}
+                        </td>
+                        <td>
+                            <div>
+                                <a class="btn btn-secondary">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                                <a class="btn btn-danger" (click)="Delect(listar.$id)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+                            <!--<a class="btn btn-danger text-white" (click)="Delect(listar.$key)">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>-->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

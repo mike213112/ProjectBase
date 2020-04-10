@@ -5,20 +5,23 @@
                 <div class="card_login">
                     <div class="card">
                         <div class="card-body text-center">
-                            <form class="form-group" (submit)="onSubmitLogin()">
-                                <h1>Inicio de Session</h1>
+                            <form class="form-group" (submit)="InicioSesion()">
+                                <h1>Inicio de Sesion</h1>
                                 <div class="form-group">
-                                    <input type="email" placeholder="Email">
+                                    <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" placeholder="Contraseña">
+                                    <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Contraseña">
                                 </div>
-                                <p>
+                                <!--<p>
                                     <a href="/accounts/password/reset">¿Has olvidado su contraseña?</a>
-                                </p>
-                                <button class="btn btn-block btn-primary btn-block" (click)="onSubmitLogin() ">
+                                </p>-->
+                                <button class="btn btn-block btn-primary btn-block" (click)="InicioSesion()">
                                 Login
-                            </button>
+                                </button>
+                                <button class="btn btn-block btn-secondary btn-block" (click)="Regresar()">
+                                    Regresar
+                                </button>
                             </form>
                         </div>
                     </div>

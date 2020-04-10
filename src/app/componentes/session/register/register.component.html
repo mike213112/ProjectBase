@@ -1,1 +1,29 @@
-<p>register works!</p>
+<section id="register" class="mb-5 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_login">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <form class="form-group" (submit)="Register()">
+                                <h1>Register</h1>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Contraseña">
+                                </div>
+                                <button class="btn btn-primary btn-block" (click)="Register() ">
+                                Register
+                                </button>
+                                <button class="btn btn-secondary btn-block" (click)="Regresar()">
+                                    Regresar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
