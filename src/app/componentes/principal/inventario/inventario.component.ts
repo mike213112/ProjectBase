@@ -33,7 +33,6 @@ export class InventarioComponent implements OnInit {
         this.listarProductos.push(x as Products)
       });
     });
-    this.resetForm();
     this.authService.GetUser().subscribe(auth => {
       if(auth){
         this.isLogged = true;
@@ -44,16 +43,8 @@ export class InventarioComponent implements OnInit {
     });
   }
 
-  onSubmit(myform: NgForm){
-    this.baseService.Productos(myform.value);
-    this.toastr.success('Se agrego un nuevo producto')
-    this.resetForm(myform);
-  }
-
-  resetForm(myform?: NgForm){
-    if(myform != null)
-    myform.reset();
-    this.baseService.SelectProduct = new Products();
+  Editar(producto: Products){
+    this.baseService.SelectProduct = Object.assign({}, producto);
   }
 
   Delect($id: string){

@@ -32,8 +32,8 @@
             <a class="nav-link" [routerLink]="['/accounts/register']" routerLinkActive="active"> Register </a>
         </li>
     </ul>
-
 </nav>
+<br>
 <div class="container">
     <div class="card ">
         <div class="card-header">
@@ -43,13 +43,16 @@
             <table class="table table-hover table-dark">
                 <thead>
                     <tr>
+                        <th>No.</th>
                         <th>Codigo</th>
                         <th>Nombre</th>
                         <th>Precio</th>
+                        <th>Editar o Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let listar of listarProductos">
+                    <tr *ngFor="let listar of listarProductos; index as i">
+                        <th scope="row">{{i+1}}</th>
                         <td>
                             {{listar.codigo}}
                         </td>
@@ -60,17 +63,12 @@
                             {{listar.precio}}
                         </td>
                         <td>
-                            <div>
-                                <a class="btn btn-secondary">
-                                    <i class="far fa-edit"></i>
-                                </a>
-                                <a class="btn btn-danger" (click)="Delect(listar.$id)">
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
-                            </div>
-                            <!--<a class="btn btn-danger text-white" (click)="Delect(listar.$key)">
+                            <a class="btn btn-success" (click)="Editar(listar)" data-toggle="modal" data-target="#modalEdit">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger" (click)="Delect(listar.$id)">
                                 <i class="fas fa-trash-alt"></i>
-                            </a>-->
+                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -78,3 +76,4 @@
         </div>
     </div>
 </div>
+<bases-modal></bases-modal>

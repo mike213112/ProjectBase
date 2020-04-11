@@ -18,6 +18,7 @@ import { RegisterComponent } from './componentes/session/register/register.compo
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ProductoComponent } from './componentes/principal/producto/producto.component';
 import { InventarioComponent } from './componentes/principal/inventario/inventario.component';
+import { ModalComponent } from './componentes/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { InventarioComponent } from './componentes/principal/inventario/inventar
     PrincipalComponent,
     ProductoComponent,
     InventarioComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

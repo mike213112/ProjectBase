@@ -28,7 +28,7 @@ export class BaseService {
    }
 
    ActualizarProductos(producto: Products){
-     this.listaDeProductos.update(producto.$id,{
+     this.listaDeProductos.update(producto.$id, {
       codigo: producto.codigo,
       nombre: producto.nombre,
       precio: producto.precio
