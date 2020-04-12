@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
               private mensaje: ToastrService) { }
 
   ngOnInit(): void {
-  }
+  } 
 
   Register(){
     this.autenticar.Register(this.email, this.password)

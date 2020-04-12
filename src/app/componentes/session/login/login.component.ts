@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     .then((res) => {
       this.router.navigate(['/principal']);
       this.mensaje.success('Lo Lograstes Campeon')
-    }).catch((err) =>{
+    }).catch((err) => {
       this.mensaje.error('Hacelo bien');
       this.router.navigate(['accounts/login']);
     });

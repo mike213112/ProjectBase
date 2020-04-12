@@ -5,12 +5,13 @@ import { LoginComponent } from './componentes/session/login/login.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RutasGuard } from './guards/rutas.guard';
 
 //Definir las rutas, estan se veran reflejado en la web como url
 const routes: Routes = [
   { path: 'principal', component: PrincipalComponent },
-  { path: 'principal/ingresar', component: ProductoComponent },
-  { path: 'principal/inventario', component: InventarioComponent },
+  { path: 'principal/ingresar', component: ProductoComponent, canActivate: [RutasGuard] },
+  { path: 'principal/inventario', component: InventarioComponent, canActivate: [RutasGuard] },
   { path: 'accounts/login', component: LoginComponent },
   { path: 'accounts/register', component: RegisterComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'principal' }

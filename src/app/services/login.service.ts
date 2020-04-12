@@ -9,10 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
 
+  public userDAta$: Observable<firebase.User>;
+
   SeleccionarUsuario: AngularFireList<any>;
 
   constructor(public BeckyyEmmanuelNoHablan: AngularFireAuth) { 
-
+    this.userDAta$ = BeckyyEmmanuelNoHablan.authState;
   }
 
   //Iniciar Sesion
