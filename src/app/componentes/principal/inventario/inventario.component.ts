@@ -50,7 +50,7 @@ export class InventarioComponent implements OnInit {
   Delect($id: string){
     if(confirm('Estas seguro de querer eliminar este producto del inventario?')){
       this.baseService.EliminarProducto($id);
-      this.toastr.success('El producto ha sido eliminado correctamente')
+      this.toastr.success('El producto ha sido eliminado correctamente');
     }
   }
 

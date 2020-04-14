@@ -3,5 +3,7 @@ export class Products {
     codigo: string;
     nombre: string;
     precio: number;
+    id?: string;
+    userId: string;
 }
  

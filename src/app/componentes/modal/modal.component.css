@@ -1,6 +1,9 @@
-.modal fade {
-  background-color: black;
+.modal-content {
+  background: black;
 }
-.modal fade .modal-title {
-  text-align: center;
+.modal-content .modal-header {
+  color: white;
+}
+.col-form-label {
+  color: white;
 }

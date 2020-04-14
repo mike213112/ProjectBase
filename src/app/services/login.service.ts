@@ -3,7 +3,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+// import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+// import { User } from '../models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,8 @@ export class LoginService {
 
   SeleccionarUsuario: AngularFireList<any>;
 
-  constructor(public BeckyyEmmanuelNoHablan: AngularFireAuth) { 
+  constructor(private BeckyyEmmanuelNoHablan: AngularFireAuth,
+              ) { 
     this.userDAta$ = BeckyyEmmanuelNoHablan.authState;
   }
 
@@ -51,9 +53,12 @@ export class LoginService {
   Register(email: string, password: string){
     return new Promise((retornar, reject) => {
       this.BeckyyEmmanuelNoHablan.auth.createUserWithEmailAndPassword(email, password)
-      .then(userData => retornar(userData),
-      err => reject(err));
-    });
+      // .then(userData => {retornar(userData),
+        // this.CrearRoles(userData.user);
+        // }).catch(err => reject(err));
+        .then(userData => retornar(userData),
+        err => reject(err));
+      });
   }
   
   //Cerrar Sesion
@@ -63,7 +68,19 @@ export class LoginService {
 
   //Obtener el usuario
   GetUser(){
-    return this.BeckyyEmmanuelNoHablan.authState.pipe(map(auth => auth));
+    return this.BeckyyEmmanuelNoHablan.authState.pipe(map(auth => auth)); 
   }
+
+  // private CrearRoles(User){
+  //   const UsuarioReferencia: AngularFirestoreDocument<any> = this.angularStorage.doc('usuarios/${user.$id}');
+  //   const data = User = {
+  //     id: User.$id,
+  //     email: User.email,
+  //     roles: {
+  //       editor: true
+  //     }
+  //   }
+  //   return UsuarioReferencia.set(data,{merge: true});
+  // }
 
 }

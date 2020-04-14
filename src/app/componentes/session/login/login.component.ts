@@ -2,7 +2,6 @@ import { LoginService } from './../../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
 @Component({
   selector: 'bases-login',
   templateUrl: './login.component.html',
@@ -24,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.autenticar.Login(this.email, this.password)
     .then((res) => {
       this.router.navigate(['/principal']);
-      this.mensaje.success('Lo Lograstes Campeon')
+      this.mensaje.success('Ingreso correctamente');
     }).catch((err) => {
       this.mensaje.error('Hacelo bien');
       this.router.navigate(['accounts/login']);

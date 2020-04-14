@@ -1,4 +1,3 @@
-import { BaseService } from './services/base.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -6,6 +5,9 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { BaseService } from './services/base.service';
+import { LoginService } from './services/login.service';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
@@ -40,7 +42,7 @@ import { ModalComponent } from './componentes/modal/modal.component';
   ],
   providers: [
     BaseService,
-    LoginComponent,
+    LoginService,
     AngularFireAuth
   ],
   bootstrap: [AppComponent]

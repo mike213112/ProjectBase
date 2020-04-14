@@ -41,11 +41,12 @@ export class ProductoComponent implements OnInit {
         this.isLogged = false;
       }
     });
-  }
+  } 
 
   onSubmit(myform: NgForm){
+    // this.baseService.Productos(myform.value);
     this.baseService.Productos(myform.value);
-    this.toastr.success('Se agrego un nuevo producto')
+    this.toastr.success('Se agrego un nuevo producto');
     this.resetForm(myform);
   }
 
